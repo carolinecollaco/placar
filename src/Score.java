@@ -30,7 +30,12 @@ public class Score {
 	}
 
 	public boolean isIppon() {
-		return wazari == 2;
+		if(wazari == 2)
+			return true;
+		if(getOsaekomiTime()>=25)
+			return true;
+		else return false;
+	
 	}
 
 	public void startOsaekomi() {
