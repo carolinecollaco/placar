@@ -3,16 +3,22 @@ public class Score {
 
 	private int wazari;
 	private int yuko;
-	private CountSeconds osaekomi;
+	private CountSeconds osaekomiIppon;
+	private CountSeconds osaekomiWazari;
 	
 	public Score() {
-		osaekomi = new CountSeconds();
+		osaekomiIppon = new CountSeconds();
+		osaekomiWazari = new CountSeconds();
 	}
 	
-	public void addWazari() {
+	public void addWazariAndStartOsaekomi() {
 		wazari += 1;
+		osaekomiWazari.start();
 	}
 
+	public long getTimeOsaekomiWazari() {
+		return osaekomiWazari.getTimePassedInSeconds();
+	}
 	public int getWazari() {
 		return wazari;
 	}
@@ -32,22 +38,23 @@ public class Score {
 	public boolean isIppon() {
 		if(wazari == 2)
 			return true;
-		if(getOsaekomiTime()>=25)
+		if(getOsaekomiIppon()>=25)
 			return true;
 		else return false;
 	
 	}
 
-	public void startOsaekomi() {
-		osaekomi.start();
+	public void startOsaekomiIppon() {
+		osaekomiIppon.start();
 	}
 
 	public void stopOsaekomi() {
-		osaekomi.stop();		
+		osaekomiIppon.stop();	
+		osaekomiWazari.stop();
 	}
 
-	public long getOsaekomiTime() {
-		long time = osaekomi.getTimePassedInSeconds();
+	public long getOsaekomiIppon() {
+		long time = osaekomiIppon.getTimePassedInSeconds();
 		return time;
 	}
 
