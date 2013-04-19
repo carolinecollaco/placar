@@ -5,75 +5,65 @@
  * @version 2013.17.03
  */
 public class Score {
-	//pontuação wazari
-	private int wazari;
-	//pontuaçãp yuko
-	private int yuko;
-	//tempo de osaekomi quando é equivalente a um Ippon
-	private CountSeconds osaekomiIppon;
-	//tempo de osaekomi quando é equivalente a um Wazari
-	private CountSeconds osaekomiWazari;
-	//tempo de osaekomi quando é equivalente a um Yuko
-	private CountSeconds osaekomiYuko;
+    //pontuação wazari
+    private int wazari;
+    //pontuaçãp yuko
+    private int yuko;
 
-	public Score() {
-		osaekomiIppon = new CountSeconds();
-		osaekomiWazari = new CountSeconds();
-		osaekomiYuko = new CountSeconds();
-	}
-	
-	public void addWazariAndStartOsaekomi() {
-		wazari += 1;
-		osaekomiWazari.start();
-	}
+    private CountSeconds osaekomi;
 
-	public long getTimeOsaekomiWazari() {
-		return osaekomiWazari.getTimePassedInSeconds();
-	}
-	public int getWazari() {
-		return wazari;
-	}
-	
-	public void addYuko() {
-		yuko += 1;		
-		if(yuko==2){
-			wazari += 1;
-			yuko= 0;
-		}
-		osaekomiYuko.start();
-	}
 
-	public long getTimeOsaekomiYuko() {
-		return osaekomiYuko.getTimePassedInSeconds();
-	}
-	
-	public int getYukko() {		
-		return yuko;
-	}
+    public Score() {
+        osaekomi = new CountSeconds();      
+    }
+    
+    public void addYuko() {
+        yuko += 1;      
+        if(yuko==2){
+            wazari += 1;
+            yuko= 0;
+        }
+        
+    }
+        
+    public int getYukko() {     
+        return yuko;
+    }
+    
+    public void addWazari() {
+        wazari += 1;
+                
+    }
 
-	public boolean isIppon() {
-		if(wazari == 2)
-			return true;
-		if(getOsaekomiIppon()>=25)
-			return true;
-		else return false;
-	
-	}
+    public int getWazari() {
+        return wazari;
+    }
+    
 
-	public void startOsaekomiIppon() {
-		osaekomiIppon.start();
-	}
+    public boolean isIppon() {
+        if(wazari == 2)
+            return true;
+        if(getOsaekomi()>=25)
+            return true;
+        else return false;    
+    }
 
-	public void stopOsaekomi() {
-		osaekomiIppon.stop();	
-		osaekomiWazari.stop();
-	}
+    public void startOsaekomi() {
+        osaekomi.start();   
+    }
+    
+    public void stopOsaekomi() {
+        osaekomi.stop();    
+         if(getOsaekomi() >= 15 && getOsaekomi() < 20){
+             yuko += 1; 
+        }    
+        if(getOsaekomi() >= 20 && getOsaekomi() < 25){
+            wazari += 1;
+        }       
+    }
 
-	public long getOsaekomiIppon() {
-		long time = osaekomiIppon.getTimePassedInSeconds();
-		return time;
-	}
-
-	
-	
+    public long getOsaekomi() {
+        return osaekomi.getTimePassedInSeconds();
+    }   
+    
 }
