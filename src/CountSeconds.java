@@ -20,7 +20,7 @@ public class CountSeconds {
 		timePassedInSeconds = 0;
 	}
 	/**
-	 * Nos quanto tempo se passou desde que o crônometro foi acionado.
+	 * Nos dá quanto tempo se passou desde que o crônometro foi acionado.
 	 */
 	public long getTimePassedInSeconds() {
 		if(timePassedInSeconds==0)
@@ -29,7 +29,7 @@ public class CountSeconds {
 			return timePassedInSeconds;		
 	}
 	/**
-	 * Nos quanto tempo se passou desde que o crônometro foi acionado até que é dado o stop.
+	 * Nos dá quanto tempo se passou desde que o crônometro foi acionado até que é dado o stop.
 	 */
 	public void stop() {	
 		timePassedInSeconds = System.currentTimeMillis()/1000 - start;
