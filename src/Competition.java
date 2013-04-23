@@ -4,7 +4,7 @@ public class Competition
 {
     private String area;
     private String day;
-    private List competitor;
+    private List<Competitor> competitor;
        
     /**
      * Create a Competition.
@@ -13,7 +13,7 @@ public class Competition
     {
         area = "unknown";
         day = "unknown";
-        competitor = new ArrayList();        
+        competitor = new ArrayList<Competitor>();        
     }
 
     /**
@@ -49,9 +49,9 @@ public class Competition
         System.out.println("Competition: " + day);
         System.out.println("Area: " + area);
         System.out.println("Competitor's list:");
-        Iterator i = competitor.iterator();
+        Iterator<Competitor> i = competitor.iterator();
         while(i.hasNext()) {
-            Competitor competitor = (Competitor)i.next();
+            Competitor competitor = i.next();
             competitor.print();
         }
     }
