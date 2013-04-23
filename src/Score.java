@@ -11,10 +11,18 @@ public class Score {
     private int yuko;
 
     private CountSeconds osaekomi;
+    
+    private int shido;
+    
+    private Score oponentScore;
 
 
     public Score() {
         osaekomi = new CountSeconds();      
+    }
+    
+    public void setOponent(Score oponentScore){
+    	this.oponentScore = oponentScore;
     }
     
     public void addYuko() {
@@ -66,4 +74,23 @@ public class Score {
         return osaekomi.getTimePassedInSeconds();
     }   
     
+	public void addShido() {
+        shido += 1;      
+        if(shido==2)
+        	oponentScore.addYuko();
+        if(shido==3)
+        	oponentScore.addWazari();
+        if(shido==4){
+        	oponentScore.addYuko();
+        	oponentScore.addWazari();
+        }
+        if(shido==5){
+        	oponentScore.addWazari();    
+        	oponentScore.addWazari();
+        }
+	} 
+	
+	public int getShido(){
+		return shido;
+	}
 }
