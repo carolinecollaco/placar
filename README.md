@@ -19,7 +19,6 @@ No placar, devem aparecer, obrigatoriamente, as pontuações e penalidades, temp
 Como funciona 
 ---------------------
 A partir de comandos do teclado você pode manipular um teclador de judô. Adicionando pontuações e penalizações, e ainda inicializando o tempo de osaekomi.
----------------------
 
 Comandos
 ---------------------
