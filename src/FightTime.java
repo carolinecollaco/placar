@@ -1,18 +1,33 @@
 
 public class FightTime {
 	
-	private CountSeconds seconds;
+	private long startTimeMiliseconds;
 	
-	public FightTime() {
-		seconds = new CountSeconds();
+	private long timePassedInMiliseconds;
+
+	private boolean stopped = true;
+	
+	public void start() {
+		stopped = false;
+		startTimeMiliseconds = System.currentTimeMillis()-timePassedInMiliseconds;
 	}
 	
-	public void start(){
-		seconds.start();
+	public long getTimePassedInSeconds() {
+		if(startTimeMiliseconds==0)
+			return 0;
+		if(stopped)
+			return timePassedInMiliseconds/1000;		
+		return (System.currentTimeMillis() - startTimeMiliseconds)/1000;
 	}
+	
+	public void stop() {	
+		stopped = true;
+		timePassedInMiliseconds = System.currentTimeMillis() - startTimeMiliseconds;
+	}
+
 	
 	public String minutes(){
-		long secondsPassed = seconds.getTimePassedInSeconds();
+		long secondsPassed = getTimePassedInSeconds();
 		long minutes = secondsPassed/60;
 		long secondsToShow = secondsPassed%60;
 		if(secondsToShow<10){
