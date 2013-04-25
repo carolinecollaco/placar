@@ -15,6 +15,8 @@ public class Score {
     private int shido;
     
     private Score oponentScore;
+    
+    private boolean ippon = false;
 
 
     public Score() {
@@ -49,7 +51,9 @@ public class Score {
     
 
     public boolean isIppon() {
-        if(wazari == 2)
+        if(ippon)
+        	return true;
+    	if(wazari == 2)
             return true;
         if(getOsaekomi()>=25)
             return true;
@@ -92,5 +96,10 @@ public class Score {
 	
 	public int getShido(){
 		return shido;
+	}
+
+	public void setIppon() {
+		ippon = true;
+		
 	}
 }
