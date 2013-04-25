@@ -20,6 +20,12 @@ Como funciona
 ---------------------
 A partir de comandos do teclado você pode manipular um teclador de judô. Adicionando pontuações e penalizações, e ainda inicializando o tempo de osaekomi.
 
+GUI
+---------------------
+![Screenshot da gui](tps://raw.github.com/carolinecollaco/placar/master/tela.png "GUI") 
+
+https://raw.github.com/carolinecollaco/placar/master/tela.png
+
 Comandos
 ---------------------
 
