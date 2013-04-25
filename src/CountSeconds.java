@@ -23,6 +23,8 @@ public class CountSeconds {
 	 * Nos dá quanto tempo se passou desde que o crônometro foi acionado.
 	 */
 	public long getTimePassedInSeconds() {
+		if(start==0)
+			return 0;
 		if(timePassedInSeconds==0)
 			return System.currentTimeMillis()/1000 - start;
 		else
