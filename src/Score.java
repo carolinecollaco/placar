@@ -42,7 +42,9 @@ public class Score {
     
     public void addWazari() {
         wazari += 1;
-                
+        if (wazari >=2){
+            isIppon(); 
+        }       
     }
 
     public int getWazari() {
