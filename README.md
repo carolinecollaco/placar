@@ -1,4 +1,4 @@
-placar de Judô
+Placar de Judô
 ======
 
 O projeto consiste em criar um placar para competições de Judô.
@@ -6,9 +6,6 @@ O projeto consiste em criar um placar para competições de Judô.
 [Download](https://www.dropbox.com/s/ye30hasvblir0l2/placar.jar)
 ============
 
-Como funciona 
----------------------
-A partir de comandos do teclado você pode manipular um teclador de judô. Adicionando pontuações e penalizações, e ainda inicializando o tempo de osaekomi.
 
 Resumo do projeto
 ---------------------
@@ -18,6 +15,11 @@ Objetivo do projeto
 ---------------------
 Objetivo desse projeto é criar um placar para competições de Judô. Esse placar deve apresentar as informações necessárias para que torne-se fácil o entendimento dos acontecimentos da competição para quem está assistindo e para os árbitros. Esse projeto será de código-aberto e livre, podendo ser utilizado, modificado e distribuído por qualquer um que tenha interesse sendo disponibilizado no gitHub. 
 No placar, devem aparecer, obrigatoriamente, as pontuações e penalidades, tempo decorrido da luta e tempo de osaekomi. Porém, poderão ser adicionadas informações adicionais. 
+
+Como funciona 
+---------------------
+A partir de comandos do teclado você pode manipular um teclador de judô. Adicionando pontuações e penalizações, e ainda inicializando o tempo de osaekomi.
+---------------------
 
 Comandos
 ---------------------
