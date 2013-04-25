@@ -22,7 +22,7 @@ A partir de comandos do teclado você pode manipular um teclador de judô. Adici
 
 GUI
 ---------------------
-![Screenshot da gui](tps://raw.github.com/carolinecollaco/placar/master/tela.png "GUI") 
+![Screenshot da gui](https://raw.github.com/carolinecollaco/placar/master/tela.png "GUI") 
 
 https://raw.github.com/carolinecollaco/placar/master/tela.png
 
