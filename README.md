@@ -26,6 +26,7 @@ Comandos
 <pre><code>
 
 -1 &lt;Inicia a contagem de tempo da luta&gt;
+
 Comandos do Competidor 1:
 
 -q &lt;Adiciona um Yuko&gt;
