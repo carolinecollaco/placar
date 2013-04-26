@@ -24,7 +24,6 @@ GUI
 ---------------------
 ![Screenshot da gui](https://raw.github.com/carolinecollaco/placar/master/tela.png "GUI") 
 
-https://raw.github.com/carolinecollaco/placar/master/tela.png
 
 Comandos
 ---------------------
