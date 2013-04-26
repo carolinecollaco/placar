@@ -1,13 +1,13 @@
 /**
  * Na classe score temos os tipos de pontuações que podem existir em uma competição de Judô
- * Temos também o tempo de osaekomi, que pode resultar em uma pontuação proporcioanal ao tempo adquirido.
- * @author Caroline Collaço and
+ * Temos também o tempo de osaekomi, que pode resultar em uma pontuação proporcional ao tempo adquirido.
+ * @author Caroline Collaço and Francisco Fadel Peniche
  * @version 2013.17.03
  */
 public class Score {
-    //pontuação wazari
+    //Declaração das pontuações e contador de tempo
     private int wazari;
-    //pontuaçãp yuko
+    
     private int yuko;
 
     private CountSeconds osaekomi;
@@ -18,22 +18,17 @@ public class Score {
     
     private boolean ippon = false;
 
-
+    //classe construtora
     public Score() {
         osaekomi = new CountSeconds();      
     }
-    
+    //passagem the parametros para uma instancia da classe
     public void setOponent(Score oponentScore){
-    	this.oponentScore = oponentScore;
+        this.oponentScore = oponentScore;
     }
-    
+    //incrementos e verificação de pontuação
     public void addYuko() {
-        yuko += 1;      
-        if(yuko==2){
-            wazari += 1;
-            yuko= 0;
-        }
-        
+        yuko += 1;       
     }
         
     public int getYukko() {     
@@ -42,9 +37,9 @@ public class Score {
     
     public void addWazari() {
         wazari += 1;
-        if (wazari >=2){
-            isIppon(); 
-        }       
+        if (wazari >= 2){
+            isIppon();
+        }
     }
 
     public int getWazari() {
@@ -54,8 +49,8 @@ public class Score {
 
     public boolean isIppon() {
         if(ippon)
-        	return true;
-    	if(wazari == 2)
+            return true;
+        if(wazari == 2)
             return true;
         if(getOsaekomi()>=25)
             return true;
@@ -74,34 +69,37 @@ public class Score {
         if(getOsaekomi() >= 20 && getOsaekomi() < 25){
             wazari += 1;
         }       
+        if(getOsaekomi() >= 25){
+            isIppon();
+        }
     }
 
     public long getOsaekomi() {
         return osaekomi.getTimePassedInSeconds();
     }   
-    
-	public void addShido() {
+    //incrementos de penalidades
+    public void addShido() {
         shido += 1;      
         if(shido==2)
-        	oponentScore.addYuko();
+            oponentScore.addYuko();
         if(shido==3)
-        	oponentScore.addWazari();
+            oponentScore.addWazari();
         if(shido==4){
-        	oponentScore.addYuko();
-        	oponentScore.addWazari();
+            oponentScore.addWazari();
+            oponentScore.isIppon();
         }
         if(shido==5){
-        	oponentScore.addWazari();    
-        	oponentScore.addWazari();
+            oponentScore.addWazari();    
+            oponentScore.addWazari();
         }
-	} 
-	
-	public int getShido(){
-		return shido;
-	}
+    } 
+    
+    public int getShido(){
+        return shido;
+    }
 
-	public void setIppon() {
-		ippon = true;
-		
-	}
+    public void setIppon() {
+        ippon = true;
+        
+    }
 }
